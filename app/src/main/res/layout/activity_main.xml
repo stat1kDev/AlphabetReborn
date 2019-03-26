@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/background"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp">
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/button1"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d01"
+                android:onClick="openButton1" />
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d02"
+                android:onClick="openButton2" />
+
+            <Button
+                android:id="@+id/button3"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d03"
+                android:onClick="openButton3" />
+
+            <Button
+                android:id="@+id/button4"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d04"
+                android:onClick="openButton4" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/button5"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d05"
+                android:onClick="openButton5" />
+
+            <Button
+                android:id="@+id/button6"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d06"
+                android:onClick="openButton6" />
+
+            <Button
+                android:id="@+id/button7"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d07"
+                android:onClick="openButton7" />
+
+            <Button
+                android:id="@+id/button8"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d08"
+                android:onClick="openButton8" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/button9"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d09"
+                android:onClick="openButton9" />
+
+            <Button
+                android:id="@+id/button10"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d10"
+                android:onClick="openButton10" />
+
+            <Button
+                android:id="@+id/button11"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d11"
+                android:onClick="openButton11" />
+
+            <Button
+                android:id="@+id/button12"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d12"
+                android:onClick="openButton12" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/button13"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d13"
+                android:onClick="openButton13" />
+
+            <Button
+                android:id="@+id/button14"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d14"
+                android:onClick="openButton14" />
+
+            <Button
+                android:id="@+id/button15"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d15"
+                android:onClick="openButton15" />
+
+            <Button
+                android:id="@+id/button16"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d16"
+                android:onClick="openButton16" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/button17"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d17"
+                android:onClick="openButton17" />
+
+            <Button
+                android:id="@+id/button18"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d18"
+                android:onClick="openButton18" />
+
+            <Button
+                android:id="@+id/button19"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d19"
+                android:onClick="openButton19" />
+
+            <Button
+                android:id="@+id/button20"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d20"
+                android:onClick="openButton20" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/button21"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d21"
+                android:onClick="openButton21" />
+
+            <Button
+                android:id="@+id/button22"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d22"
+                android:onClick="openButton22" />
+
+            <Button
+                android:id="@+id/button23"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d23"
+                android:onClick="openButton23" />
+
+            <Button
+                android:id="@+id/button24"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d24"
+                android:onClick="openButton24" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/button25"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d25"
+                android:onClick="openButton25" />
+
+            <Button
+                android:id="@+id/button26"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d26"
+                android:onClick="openButton26" />
+
+            <Button
+                android:id="@+id/button27"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d27"
+                android:onClick="openButton27" />
+
+            <Button
+                android:id="@+id/button28"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d28"
+                android:onClick="openButton28" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/button29"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d29"
+                android:onClick="openButton29" />
+
+            <Button
+                android:id="@+id/button30"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d30"
+                android:onClick="openButton30" />
+
+            <Button
+                android:id="@+id/button31"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d31"
+                android:onClick="openButton31" />
+
+            <Button
+                android:id="@+id/button32"
+                style="@style/MyButtonStyle"
+                android:background="@drawable/d32"
+                android:onClick="openButton32" />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/space1"
+                style="@style/MyButtonStyle"
+                android:layout_weight="7"
+                android:background="@drawable/d29"
+                android:visibility="invisible" />
+
+
+
+            <Button
+                android:id="@+id/button33"
+                android:layout_marginStart="7.5dp"
+                android:layout_weight="5"
+                android:background="@drawable/d33"
+                android:onClick="openButton33" />
+
+
+            <Button
+                android:id="@+id/space4"
+                android:layout_weight="7"
+                android:visibility="invisible"
+                android:background="@drawable/d30"/>
+        </TableRow>
+
+    </TableLayout>
+
+
+</LinearLayout>
+</ScrollView>

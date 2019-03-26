@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AlphabetReborn</string>
+    <string name="tap_again">Нажмите Назад еще раз для выхода</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
