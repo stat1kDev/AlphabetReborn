@@ -1,6 +1,7 @@
 package stat1kDev.alphabet2.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +22,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
         setContentView(R.layout.activity_main);
 
         initControl();
-
 
     }
 
@@ -95,20 +95,104 @@ public class MainActivity extends Activity implements View.OnClickListener{
         btn33.setOnClickListener(this);
     }
 
+    public void doIntent(int id) {
+        Intent intent = new Intent(this, DetailLetterActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putInt("drawableId", id);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
     @Override
     public void onClick(View v){
+        int idLetter;
+
         switch (v.getId()) {
             case R.id.button1:
+                idLetter = R.drawable.b01;
+                doIntent(idLetter);
+                break;
+
+            case R.id.button2:
+                idLetter = R.drawable.b02;
+                doIntent(idLetter);
+                break;
+
+            case R.id.button3:
+                idLetter = R.drawable.b03;
+                doIntent(idLetter);
+                break;
+
+            case R.id.button4:
+                idLetter = R.drawable.b04;
+                doIntent(idLetter);
+                break;
+
+            case R.id.button5:
+
+            case R.id.button6:
+
+            case R.id.button7:
+
+            case R.id.button8:
+
+            case R.id.button9:
+
+            case R.id.button10:
+
+            case R.id.button11:
+
+            case R.id.button12:
+
+            case R.id.button13:
+
+            case R.id.button14:
+
+            case R.id.button15:
+
+            case R.id.button16:
+
+            case R.id.button17:
+
+            case R.id.button18:
+
+            case R.id.button19:
+
+            case R.id.button20:
+
+            case R.id.button21:
+
+            case R.id.button22:
+
+            case R.id.button23:
+
+            case R.id.button24:
+
+            case R.id.button25:
+
+            case R.id.button26:
+
+            case R.id.button27:
+
+            case R.id.button28:
+
+            case R.id.button29:
+
+            case R.id.button30:
+
+            case R.id.button31:
+
+            case R.id.button32:
+
+            case R.id.button33:
 
 
         }
     }
 
 
-
     @Override
     public void onBackPressed() {
             ActivityUtilities.tapPromtToExit(this);
-
     }
 }
