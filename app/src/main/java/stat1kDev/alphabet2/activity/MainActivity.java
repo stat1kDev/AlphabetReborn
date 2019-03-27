@@ -95,98 +95,149 @@ public class MainActivity extends Activity implements View.OnClickListener{
         btn33.setOnClickListener(this);
     }
 
-    public void doIntent(int id) {
+    public void doIntent(int id, String soundName) {
         Intent intent = new Intent(this, DetailLetterActivity.class);
         Bundle bundle = new Bundle();
         bundle.putInt("drawableId", id);
+        bundle.putString("soundName", soundName);
         intent.putExtras(bundle);
         startActivity(intent);
     }
 
     @Override
     public void onClick(View v){
-        int idLetter;
 
         switch (v.getId()) {
             case R.id.button1:
-                idLetter = R.drawable.b01;
-                doIntent(idLetter);
+                doIntent(R.drawable.b01, "f01.ogg");
                 break;
 
             case R.id.button2:
-                idLetter = R.drawable.b02;
-                doIntent(idLetter);
+                doIntent(R.drawable.b02, "f02.ogg");
                 break;
 
             case R.id.button3:
-                idLetter = R.drawable.b03;
-                doIntent(idLetter);
+                doIntent(R.drawable.b03, "f03.ogg");
                 break;
 
             case R.id.button4:
-                idLetter = R.drawable.b04;
-                doIntent(idLetter);
+                doIntent(R.drawable.b04, "f04.ogg");
                 break;
 
             case R.id.button5:
+                doIntent(R.drawable.b05, "f05.ogg");
+                break;
 
             case R.id.button6:
+                doIntent(R.drawable.b06, "f06.ogg");
+                break;
 
             case R.id.button7:
+                doIntent(R.drawable.b07, "f07.ogg");
+                break;
 
             case R.id.button8:
+                doIntent(R.drawable.b08, "f08.ogg");
+                break;
 
             case R.id.button9:
+                doIntent(R.drawable.b09, "f09.ogg");
+                break;
 
             case R.id.button10:
+                doIntent(R.drawable.b10, "f10.ogg");
+                break;
 
             case R.id.button11:
+                doIntent(R.drawable.b11, "f11.ogg");
+                break;
 
             case R.id.button12:
+                doIntent(R.drawable.b12, "f12.ogg");
+                break;
 
             case R.id.button13:
+                doIntent(R.drawable.b13, "f13.ogg");
+                break;
 
             case R.id.button14:
+                doIntent(R.drawable.b14, "f14.ogg");
+                break;
 
             case R.id.button15:
+                doIntent(R.drawable.b15, "f15.ogg");
+                break;
 
             case R.id.button16:
+                doIntent(R.drawable.b16, "f16.ogg");
+                break;
 
             case R.id.button17:
-
+                doIntent(R.drawable.b17, "f17.ogg");
+                break;
             case R.id.button18:
+                doIntent(R.drawable.b18, "f18.ogg");
+                break;
 
             case R.id.button19:
+                doIntent(R.drawable.b19, "f19.ogg");
+                break;
 
             case R.id.button20:
+                doIntent(R.drawable.b20, "f20.ogg");
+                break;
 
             case R.id.button21:
+                doIntent(R.drawable.b21, "f21.ogg");
+                break;
 
             case R.id.button22:
+                doIntent(R.drawable.b22, "f22.ogg");
+                break;
 
             case R.id.button23:
+                doIntent(R.drawable.b23, "f23.ogg");
+                break;
 
             case R.id.button24:
+                doIntent(R.drawable.b24, "f24.ogg");
+                break;
 
             case R.id.button25:
+                doIntent(R.drawable.b25, "f25.ogg");
+                break;
 
             case R.id.button26:
+                doIntent(R.drawable.b26, "f26.ogg");
+                break;
 
             case R.id.button27:
+                doIntent(R.drawable.b27, "f27.ogg");
+                break;
 
             case R.id.button28:
+                doIntent(R.drawable.b28, "f28.ogg");
+                break;
 
             case R.id.button29:
+                doIntent(R.drawable.b29, "f29.ogg");
+                break;
 
             case R.id.button30:
+                doIntent(R.drawable.b30, "f30.ogg");
+                break;
 
             case R.id.button31:
+                doIntent(R.drawable.b31, "f31.ogg");
+                break;
 
             case R.id.button32:
+                doIntent(R.drawable.b32, "f32.ogg");
+                break;
 
             case R.id.button33:
-
-
+                doIntent(R.drawable.b33, "f33.ogg");
+                break;
         }
     }
 
