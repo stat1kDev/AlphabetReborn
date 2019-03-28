@@ -1,6 +1,7 @@
 package stat1kDev.alphabet2.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.media.AudioManager;
@@ -10,14 +11,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdView;
+
 import java.io.IOException;
 
 import stat1kDev.alphabet2.R;
 import stat1kDev.alphabet2.utilities.ActivityUtilities;
+import stat1kDev.alphabet2.utilities.AdsUtilities;
 
 public class DetailLetterActivity extends Activity implements View.OnClickListener {
 
     Button bLetterImage;
+    Button backFromDetailLetter;
 
     SoundPool mSoundPool;
     AssetManager assets;
@@ -25,6 +30,8 @@ public class DetailLetterActivity extends Activity implements View.OnClickListen
     int idLatter;
     int mButton;
     String soundName;
+    private Context mContext;
+    private Activity mActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +39,8 @@ public class DetailLetterActivity extends Activity implements View.OnClickListen
         setContentView(R.layout.activity_detail_letter);
 
         bLetterImage = findViewById(R.id.b_letterImage);
+        backFromDetailLetter = findViewById(R.id.backFromDetailLetter);
+        backFromDetailLetter.setOnClickListener(this);
 
         Bundle bundle = getIntent().getExtras();
 
@@ -42,7 +51,7 @@ public class DetailLetterActivity extends Activity implements View.OnClickListen
             soundName = bundle.getString("soundName");
         }
 
-        mSoundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
+        mSoundPool = new SoundPool.Builder().setMaxStreams(10).build();
         assets = getAssets();
 
         mButton = loadSound(soundName);
@@ -52,6 +61,12 @@ public class DetailLetterActivity extends Activity implements View.OnClickListen
                 playSound(mButton);
             }
         });
+
+        mActivity = this;
+        mContext = getApplicationContext();
+
+        AdsUtilities.getInstance(mContext).showFullScreenAd();
+        AdsUtilities.getInstance(mContext).showBannerAd((AdView) findViewById(R.id.adsView));
 
     }
 

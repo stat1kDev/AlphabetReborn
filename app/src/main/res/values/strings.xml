@@ -2,7 +2,10 @@
     <string name="app_name">AlphabetReborn</string>
     <string name="tap_again">Нажмите Назад еще раз для выхода</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- app ad section -->
+    <string name="app_ad_id">ca-app-pub-9364475966292488~6116606939</string>
+    <string name="banner_ad_unit_id">ca-app-pub-9364475966292488/5322400017</string>
+    <string name="interstitial_ad_unit_id">ca-app-pub-9364475966292488/1466915484</string>
 
 </resources>

@@ -1,13 +1,18 @@
 package stat1kDev.alphabet2.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+
+import com.google.android.gms.ads.AdView;
+
 import stat1kDev.alphabet2.R;
 import stat1kDev.alphabet2.utilities.ActivityUtilities;
+import stat1kDev.alphabet2.utilities.AdsUtilities;
 
 public class MainActivity extends Activity implements View.OnClickListener{
 
@@ -15,6 +20,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
             btn13, btn14, btn15, btn16, btn17, btn18, btn19, btn20, btn21, btn22, btn23,
             btn24, btn25, btn26, btn27, btn28, btn29, btn30, btn31, btn32, btn33;
 
+    private Context mContext;
+    private Activity mActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +29,12 @@ public class MainActivity extends Activity implements View.OnClickListener{
         setContentView(R.layout.activity_main);
 
         initControl();
+
+        mActivity = this;
+        mContext = getApplicationContext();
+
+        AdsUtilities.getInstance(mContext).showFullScreenAd();
+        AdsUtilities.getInstance(mContext).showBannerAd((AdView) findViewById(R.id.adsView));
 
     }
 
@@ -244,6 +257,13 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
     @Override
     public void onBackPressed() {
-            ActivityUtilities.tapPromtToExit(this);
+        ActivityUtilities.tapPromtToExit(this);
+    }
+
+    @Override
+    public void onResume() {
+        AdsUtilities.getInstance(mContext).loadFullScreenAd(mActivity);
+
+        super.onResume();
     }
 }

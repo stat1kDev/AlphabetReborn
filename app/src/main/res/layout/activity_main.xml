@@ -224,7 +224,11 @@
         </TableRow>
 
     </TableLayout>
+    <include
+        android:id="@+id/adsView"
+        layout="@layout/content_banner_ad" />
 
 
 </LinearLayout>
+
 </ScrollView>
