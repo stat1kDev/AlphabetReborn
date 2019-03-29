@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
-import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +22,7 @@ public class DetailLetterActivity extends Activity implements View.OnClickListen
 
     Button bLetterImage;
     Button backFromDetailLetter;
+    Button drawing;
 
     SoundPool mSoundPool;
     AssetManager assets;
@@ -40,7 +40,10 @@ public class DetailLetterActivity extends Activity implements View.OnClickListen
 
         bLetterImage = findViewById(R.id.b_letterImage);
         backFromDetailLetter = findViewById(R.id.backFromDetailLetter);
+        drawing = findViewById(R.id.drawing);
+
         backFromDetailLetter.setOnClickListener(this);
+        drawing.setOnClickListener(this);
 
         Bundle bundle = getIntent().getExtras();
 
@@ -96,9 +99,9 @@ public class DetailLetterActivity extends Activity implements View.OnClickListen
                 ActivityUtilities.getInstance().invokeNewActivity(this, MainActivity.class, true);
                 break;
 
-            //case R.id.drawing:
-                //TODO: ActivityUtilities.getInstance().invokeNewActivity(dsadsa, MainActivity.class, true);
-              //  break;
+            case R.id.drawing:
+                ActivityUtilities.getInstance().invokeNewActivity(this, DrawingActivity.class, true);
+                break;
 
         }
     }

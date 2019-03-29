@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.DetailLetterActivity"/>
+        <activity android:name=".activity.DrawingActivity"></activity>
+        <activity android:name=".activity.DetailLetterActivity" />
         <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,9 +21,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity" />
+
         <meta-data
-            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
-            android:value="true"/>
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-9364475966292488~6116606939" />
     </application>
 
 </manifest>

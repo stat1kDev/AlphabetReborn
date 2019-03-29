@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlid"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:weightSum="1.0" >
+
+        <LinearLayout
+            android:id="@+id/view_drawing_pad"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/backToMenu1"
+        android:onClick="back"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="Назад" />
+    <Button
+        android:id="@+id/clear"
+        android:onClick="clear"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="Очистить" />
+</RelativeLayout>
