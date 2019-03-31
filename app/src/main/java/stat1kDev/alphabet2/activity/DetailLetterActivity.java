@@ -26,10 +26,10 @@ import stat1kDev.alphabet2.utilities.AdsUtilities;
 
 public class DetailLetterActivity extends AppCompatActivity {
 
-    Button bLetterImage;
+    private Button bLetterImage;
 
-    SoundPool mSoundPool;
-    AssetManager assets;
+    private SoundPool mSoundPool;
+    private AssetManager assets;
 
     private int idLatter;
     private int mButton;
