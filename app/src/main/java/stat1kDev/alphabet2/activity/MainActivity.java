@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-
 import com.google.android.gms.ads.AdView;
 
 import stat1kDev.alphabet2.R;
@@ -16,7 +15,7 @@ import stat1kDev.alphabet2.utilities.AdsUtilities;
 
 public class MainActivity extends Activity implements View.OnClickListener{
 
-    Button  btn1,  btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12,
+    private Button  btn1,  btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12,
             btn13, btn14, btn15, btn16, btn17, btn18, btn19, btn20, btn21, btn22, btn23,
             btn24, btn25, btn26, btn27, btn28, btn29, btn30, btn31, btn32, btn33;
 
@@ -72,6 +71,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         btn31 = findViewById(R.id.button31);
         btn32 = findViewById(R.id.button32);
         btn33 = findViewById(R.id.button33);
+
 
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);

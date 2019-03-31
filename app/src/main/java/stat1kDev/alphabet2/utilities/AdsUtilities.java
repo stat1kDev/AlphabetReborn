@@ -18,6 +18,8 @@ public class AdsUtilities {
 
     private InterstitialAd mInterstitialAd;
 
+    private int interstitialCount = -1;
+
 
     private AdsUtilities(Context context) {
         MobileAds.initialize(context, context.getResources().getString(R.string.app_ad_id));
@@ -32,8 +34,7 @@ public class AdsUtilities {
 
     public void showBannerAd(final AdView mAdView) {
 
-       //AdRequest adRequest = new AdRequest.Builder().addTestDevice("F2174150CDD68CAE0282B0702A6F4593").build();
-            AdRequest adRequest = new AdRequest.Builder().build();
+            AdRequest adRequest = new AdRequest.Builder().tagForChildDirectedTreatment(true).build();
             mAdView.loadAd(adRequest);
 
             mAdView.setAdListener(new AdListener() {
@@ -52,14 +53,28 @@ public class AdsUtilities {
 
     }
 
+
     public void loadFullScreenAd(Activity activity) {
+
+        if (interstitialCount == (3)) {
             mInterstitialAd = new InterstitialAd(activity);
             mInterstitialAd.setAdUnitId(activity.getResources().getString(R.string.interstitial_ad_unit_id));
+            AdRequest adRequestInter = new AdRequest.Builder().tagForChildDirectedTreatment(true).build();
+            mInterstitialAd.setAdListener(new AdListener() {
+                @Override
+                public void onAdLoaded() {
+                    mInterstitialAd.show();
+                }
+            });
+            mInterstitialAd.loadAd(adRequestInter);
 
-            AdRequest adRequest = new AdRequest.Builder().build();
-            mInterstitialAd.loadAd(adRequest);
+            interstitialCount = 0;
+        } else {
+            interstitialCount++;
+        }
 
     }
+
 
     public boolean showFullScreenAd() {
             if (mInterstitialAd != null) {

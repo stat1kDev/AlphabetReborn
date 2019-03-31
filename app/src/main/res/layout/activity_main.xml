@@ -217,10 +217,11 @@
                 android:background="@drawable/d33"/>
 
             <Button
-                android:id="@+id/space4"
+                android:id="@+id/space2"
+                style="@style/MyButtonStyle"
                 android:layout_weight="7"
-                android:visibility="invisible"
-                android:background="@drawable/d30"/>
+                android:background="@drawable/d29"
+                android:visibility="invisible"/>
         </TableRow>
 
     </TableLayout>

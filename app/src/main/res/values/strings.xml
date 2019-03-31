@@ -8,4 +8,8 @@
     <string name="banner_ad_unit_id">ca-app-pub-9364475966292488/5322400017</string>
     <string name="interstitial_ad_unit_id">ca-app-pub-9364475966292488/1466915484</string>
 
+
+    <string name="privacy">Политика конфиденциальности</string>
+    <style name="privacyUrl">https://docs.google.com/document/d/1fsoU0HMnTSrlA2sCGvxPmbhQmi2W0arx4uHfpLPntbo/edit</style>
+
 </resources>
