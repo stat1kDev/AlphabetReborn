@@ -1,7 +1,6 @@
 package stat1kDev.alphabet2.activity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -14,7 +13,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.support.v7.widget.Toolbar;
 
@@ -29,7 +27,6 @@ public class DrawingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawing);
-        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         DrawingView mDrawingView=new DrawingView(this);
 
         initToolbar(true);
@@ -42,8 +39,6 @@ public class DrawingActivity extends AppCompatActivity {
     class DrawingView extends View
     {
         Paint mPaint;
-        //MaskFilter  mEmboss;
-        //MaskFilter  mBlur;
         Bitmap mBitmap;
         Canvas mCanvas;
         Path mPath;
