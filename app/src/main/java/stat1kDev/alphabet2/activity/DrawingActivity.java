@@ -9,22 +9,31 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+import android.support.v7.widget.Toolbar;
 
 import stat1kDev.alphabet2.R;
 import stat1kDev.alphabet2.utilities.ActivityUtilities;
 
 public class DrawingActivity extends AppCompatActivity {
 
+    private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawing);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         DrawingView mDrawingView=new DrawingView(this);
+
+        initToolbar(true);
+        enableUpButton();
 
         LinearLayout mDrawingPad = findViewById(R.id.view_drawing_pad);
 
@@ -42,7 +51,6 @@ public class DrawingActivity extends AppCompatActivity {
 
         public DrawingView(Context context) {
             super(context);
-            // TODO Auto-generated constructor stub
             mPaint = new Paint();
             mPaint.setAntiAlias(true);
             mPaint.setDither(true);
@@ -65,7 +73,6 @@ public class DrawingActivity extends AppCompatActivity {
         }
         @Override
         public void draw(Canvas canvas) {
-            // TODO Auto-generated method stub
             super.draw(canvas);
             canvas.drawBitmap(mBitmap, 0, 0, mBitmapPaint);
             canvas.drawPath(mPath, mPaint);
@@ -122,11 +129,32 @@ public class DrawingActivity extends AppCompatActivity {
 
 
     }
-    public void back(View v){
-        ActivityUtilities.getInstance().invokeNewActivity(this, MainActivity.class, true);
-            }
+    public void initToolbar(boolean isTitleEnabled) {
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(isTitleEnabled);
+    }
 
-    public void clear(View v){
-        ActivityUtilities.getInstance().invokeNewActivity(this, DrawingActivity.class, true);
+    public void enableUpButton() {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.drawing_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                ActivityUtilities.getInstance().invokeNewActivity(this, MainActivity.class, true);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

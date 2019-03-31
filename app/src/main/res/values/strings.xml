@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AlphabetReborn</string>
+    <string name="app_name">Алфавит</string>
     <string name="tap_again">Нажмите Назад еще раз для выхода</string>
 
 
@@ -10,6 +10,8 @@
 
 
     <string name="privacy">Политика конфиденциальности</string>
-    <style name="privacyUrl">https://docs.google.com/document/d/1fsoU0HMnTSrlA2sCGvxPmbhQmi2W0arx4uHfpLPntbo/edit</style>
+    <string name="menuitem_color">цвет</string>
+    <string name="menuitem_line_width">толшина линии</string>
+    <string name="menuitem_clear">очистить</string>
 
 </resources>

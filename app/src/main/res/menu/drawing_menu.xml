@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="@string/menuitem_color"
+        android:id="@+id/color"
+        android:icon="@drawable/ic_palette_black_24dp"
+        app:showAsAction="always"/>
+    <item
+        android:title="@string/menuitem_line_width"
+        android:id="@+id/line_width"
+        android:icon="@drawable/ic_brush_black"
+        app:showAsAction="always"/>
+    <item
+        android:title="@string/menuitem_clear"
+        android:id="@+id/clear"
+        android:icon="@drawable/ic_delete_black"
+        app:showAsAction="always"/>
+
+</menu>

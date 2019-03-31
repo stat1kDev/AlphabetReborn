@@ -6,9 +6,15 @@ import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.InflateException;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import com.google.android.gms.ads.AdView;
 
@@ -18,32 +24,29 @@ import stat1kDev.alphabet2.R;
 import stat1kDev.alphabet2.utilities.ActivityUtilities;
 import stat1kDev.alphabet2.utilities.AdsUtilities;
 
-public class DetailLetterActivity extends Activity implements View.OnClickListener {
+public class DetailLetterActivity extends AppCompatActivity {
 
     Button bLetterImage;
-    Button backFromDetailLetter;
-    Button drawing;
 
     SoundPool mSoundPool;
     AssetManager assets;
 
-    int idLatter;
-    int mButton;
-    String soundName;
+    private int idLatter;
+    private int mButton;
+    private String soundName;
     private Context mContext;
     private Activity mActivity;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_letter);
 
-        bLetterImage = findViewById(R.id.b_letterImage);
-        backFromDetailLetter = findViewById(R.id.backFromDetailLetter);
-        drawing = findViewById(R.id.drawing);
+        initToolbar(true);
+        enableUpButton();
 
-        backFromDetailLetter.setOnClickListener(this);
-        drawing.setOnClickListener(this);
+        bLetterImage = findViewById(R.id.b_letterImage);
 
         Bundle bundle = getIntent().getExtras();
 
@@ -91,18 +94,35 @@ public class DetailLetterActivity extends Activity implements View.OnClickListen
         return mSoundPool.load(afd, 1);
     }
 
+    public void initToolbar(boolean isTitleEnabled) {
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(isTitleEnabled);
+    }
+
+    public void enableUpButton() {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+    }
 
     @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.backFromDetailLetter:
-                ActivityUtilities.getInstance().invokeNewActivity(this, MainActivity.class, true);
-                break;
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.datail_letter_menu, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
             case R.id.drawing:
                 ActivityUtilities.getInstance().invokeNewActivity(this, DrawingActivity.class, true);
-                break;
-
+                return true;
+            case android.R.id.home:
+                ActivityUtilities.getInstance().invokeNewActivity(this, MainActivity.class, true);
+                return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 }
