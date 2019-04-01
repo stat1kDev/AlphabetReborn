@@ -14,4 +14,7 @@
     <string name="menuitem_line_width">толшина линии</string>
     <string name="menuitem_clear">очистить</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

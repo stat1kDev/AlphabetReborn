@@ -3,6 +3,7 @@ package stat1kDev.alphabet2.utilities;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.Fragment;
 import android.widget.Toast;
 
 import stat1kDev.alphabet2.R;
@@ -26,6 +27,7 @@ public class ActivityUtilities {
             activity.finish();
         }
     }
+
 
     public static void showToast(Context context, String message) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();

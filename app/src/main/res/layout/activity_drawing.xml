@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-     android:layout_width="match_parent"
-    android:id="@+id/rlid"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".drawing.DrawingActivity">
+
     <include
         android:id="@+id/toolbarTop"
         layout="@layout/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    <LinearLayout
-        android:id="@+id/view_drawing_pad"
-        android:layout_below="@+id/toolbarTop"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-    </LinearLayout>
+
+    <include layout="@layout/content_drawing" />
 
 
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -20,6 +20,7 @@ import com.google.android.gms.ads.AdView;
 import java.io.IOException;
 
 import stat1kDev.alphabet2.R;
+import stat1kDev.alphabet2.drawing.DrawingActivity;
 import stat1kDev.alphabet2.utilities.ActivityUtilities;
 import stat1kDev.alphabet2.utilities.AdsUtilities;
 
@@ -42,7 +43,7 @@ public class DetailLetterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_letter);
 
-        initToolbar(true);
+        initToolbar(false);
         enableUpButton();
 
         bLetterImage = findViewById(R.id.b_letterImage);
