@@ -27,7 +27,7 @@ public class DrawingActivityFragment extends Fragment {
     private float lastAcceleration;
     private boolean dialogOnScreen = false;
 
-    private static  final int ACCELERATION_THRESHOLD = 100000;
+    private static  final int ACCELERATION_THRESHOLD = 600000;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -78,8 +78,8 @@ public class DrawingActivityFragment extends Fragment {
                 currentAcceleration = x * x + y * y + z * z;
                 acceleration = currentAcceleration * (currentAcceleration - lastAcceleration);
 
-                //if(acceleration > ACCELERATION_THRESHOLD)
-                   // confirmErase();
+                if (acceleration > ACCELERATION_THRESHOLD)
+                    getDrawingView().clear();
             }
         }
 
@@ -100,6 +100,16 @@ public class DrawingActivityFragment extends Fragment {
         switch (item.getItemId()) {
             case android.R.id.home:
                 ActivityUtilities.getInstance().invokeNewActivity(getActivity(), MainActivity.class, true);
+                return true;
+            case R.id.clear:
+                getDrawingView().clear();
+                return true;
+            case R.id.color:
+
+                return true;
+            case R.id.line_width:
+                LineWidthDialogFragment widthDialogFragment = new LineWidthDialogFragment();
+                widthDialogFragment.show(getFragmentManager(), "line width dialog");
                 return true;
         }
         return super.onOptionsItemSelected(item);
