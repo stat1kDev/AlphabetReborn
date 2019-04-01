@@ -14,6 +14,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
+import petrov.kristiyan.colorpicker.ColorPicker;
 import stat1kDev.alphabet2.R;
 import stat1kDev.alphabet2.activity.MainActivity;
 import stat1kDev.alphabet2.utilities.ActivityUtilities;
@@ -105,7 +108,7 @@ public class DrawingActivityFragment extends Fragment {
                 getDrawingView().clear();
                 return true;
             case R.id.color:
-
+                openColorPicker();
                 return true;
             case R.id.line_width:
                 LineWidthDialogFragment widthDialogFragment = new LineWidthDialogFragment();
@@ -121,6 +124,43 @@ public class DrawingActivityFragment extends Fragment {
 
     public void setDialogOnScreen(boolean visible){
         dialogOnScreen = visible;
+    }
+
+    public void openColorPicker() {
+        final ColorPicker colorPicker = new ColorPicker(getActivity());
+        ArrayList<String> colors = new ArrayList<>();
+        colors.add("#00FFFF");
+        colors.add("#0000FF");
+        colors.add("#FF00FF");
+        colors.add("#808080");
+        colors.add("#008000");
+        colors.add("#00FF00");
+        colors.add("#800000");
+        colors.add("#000080");
+        colors.add("#808000");
+        colors.add("#800080");
+        colors.add("#FF0000");
+        colors.add("#C0C0C0");
+        colors.add("#008080");
+        colors.add("#FFFF00");
+        colors.add("#FFFFFF");
+        colors.add("#000000");
+
+        colorPicker.setColors(colors)
+                .setColumns(4)
+                .setTitle("Цвет")
+                .setRoundColorButton(true)
+                .setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
+                    @Override
+                    public void onChooseColor(int position, int color) {
+                        drawingView.setDrawingColor(color);
+                    }
+
+                    @Override
+                    public void onCancel() {
+
+                    }
+                }).show();
     }
 
 
