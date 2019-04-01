@@ -15,13 +15,15 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background"
         android:layout_below="@+id/toolbarTop"
+        android:background="@drawable/background"
+        android:layout_above="@id/adsView"
         tools:context=".activity.DetailLetterActivity">
+
         <Button
             android:id="@+id/b_letterImage"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
     </RelativeLayout>
     <include
